@@ -1,7 +1,7 @@
 class Employee:
 
-    def __init__(self, name, e_id, dept, salary):
-        self.name = name
+    def __init__(self, e_name, e_id, dept, salary=0):
+        self.name = e_name
         self.eid = e_id
         self.dept = dept
         self.salary = salary
@@ -13,15 +13,18 @@ class Employee:
               f'Salary: {self.salary}\n\n')
 
     def update_details(self, name=None, dept=None, salary=None):
-        if name is not None:
+        if name:
             self.name = name
-        if dept is not None:
+        if dept:
             self.dept = dept
-        if salary is not None:
+        if salary:
             self.salary = salary
 
+    def increment_salary(self, per):
+        self.salary += round(self.salary * (per/100))
 
-emp1 = Employee('Aryan', 123, 'CSE', 250000)
+
+emp1 = Employee('Aryan', 2415800020, 'CSE', 250000)
 emp1.display_info()
-emp1.update_details(name='Aryan 2', salary=4000)
+emp1.increment_salary(20)
 emp1.display_info()
