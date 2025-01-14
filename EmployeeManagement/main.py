@@ -13,12 +13,15 @@ class Employee:
               f'Salary: {self.salary}\n\n')
 
     def update_details(self, name=None, dept=None, salary=None):
-        self.name = name
-        self.dept = dept
-        self.salary = salary
+        if name is not None:
+            self.name = name
+        if dept is not None:
+            self.dept = dept
+        if salary is not None:
+            self.salary = salary
 
 
 emp1 = Employee('Aryan', 123, 'CSE', 250000)
 emp1.display_info()
-emp1.update_details('Naithani', 'BioTech', 40000)
+emp1.update_details(name='Aryan 2', salary=4000)
 emp1.display_info()
