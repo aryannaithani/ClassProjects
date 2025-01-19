@@ -24,7 +24,23 @@ class Employee:
         self.salary += round(self.salary * (per/100))
 
 
-emp1 = Employee('Aryan', 2415800020, 'CSE', 250000)
-emp1.display_info()
-emp1.increment_salary(20)
-emp1.display_info()
+class EmployeeManagement:
+
+    def __init__(self):
+        self.employees = []
+        self.eid = 1
+
+    def add_employee(self, name, dept, salary):
+        new = {self.eid : [name, dept, salary]}
+        self.employees.append(new)
+        self.eid += 1
+
+
+    def remove_employee(self, eid):
+        self.employees.pop(eid-1)
+
+    def show(self):
+        for i in self.employees:
+            print(i)
+
+
