@@ -36,9 +36,11 @@ obj2 = EmployeeManagement()
 obj1 = Employee()
 print('----------EMPLOYEE MANAGEMENT SYSTEM----------')
 while True:
-    cmd = int(input('Enter 1 for Employee Menu\nEnter 2 for Administrator Menu\n'))
+    cmd = int(input('Enter 1 for Employee Menu\n'
+                    'Enter 2 for Administrator Menu\n'))
     if cmd == 1:
-        ecmd = int(input('Enter 1 to show details\nEnter 2 to update details\n'))
+        ecmd = int(input('Enter 1 to show details\n'
+                         'Enter 2 to update details\n'))
         if ecmd == 1:
             x = int(input('Enter Your Employee ID: '))
             obj1.show_details(x)
@@ -52,11 +54,14 @@ while True:
             obj1.show_details(x)
             print('\n')
     elif cmd == 2:
-        acmd = int(input('Enter 1 to add employee\nEnter 2 to remove employee\nEnter 3 to increment salaries\nEnter 4 to show all employees\n'))
+        acmd = int(input('Enter 1 to add employee\n'
+                         'Enter 2 to remove employee\n'
+                         'Enter 3 to increment salaries\n'
+                         'Enter 4 to show all employees\n'))
         if acmd == 1:
             name = input('Enter new employee name: ')
             dept = input(f'Enter {name}\'s department: ')
-            salary = input(f'Enter {name}\'s salary: ')
+            salary = int(input(f'Enter {name}\'s salary: '))
             obj2.add_employee(name, dept, salary)
             print(f'{name} added as new Employee\n\n')
         elif acmd == 2:
