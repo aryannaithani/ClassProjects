@@ -16,7 +16,7 @@ class EmployeeManagement:
         for i in employees:
             print(i)
 
-    def increment(self, eid, per):
+    def __increment(self, eid, per):
         employees[eid-1][eid][2] += round(employees[eid-1][eid][2] * (per/100))
 
 
@@ -71,7 +71,7 @@ while True:
         elif acmd == 3:
             x = int(input('Enter employee ID for salary increment: '))
             y = int(input('Enter Increment percentage: '))
-            obj2.increment(x, y)
+            obj2._EmployeeManagement__increment(x, y)
             print('Salary Incremented\n\n')
         elif acmd == 4:
             obj2.show()
